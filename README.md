@@ -56,7 +56,6 @@ All programs use the CMSIS device header (`LPC17xx.h`) and access the peripheral
 > Each file is a standalone program. They are not meant to be compiled together.
 
 ## Author
-Jawad Khan B.Tech, Electronics and Communication Engineering, PES University LinkedIn | jawadkhann116@gmail.com
 **Jawad Khan**
 B.Tech, Electronics and Communication Engineering, PES University
 [LinkedIn](https://linkedin.com/in/jawad-khan-225a44355) | jawadkhann116@gmail.com
