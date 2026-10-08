@@ -1,0 +1,63 @@
+# LED Blinking on LPC1768
+
+A simple embedded C program that blinks an LED on the **NXP LPC1768 (ARM Cortex-M3)** microcontroller. It is a "Hello World" for embedded systems and shows how to configure a GPIO pin as an output and toggle it with a software delay.
+
+## Overview
+
+The program sets a GPIO pin as an output, then repeatedly turns the LED on, waits, turns it off, and waits again.
+
+## Hardware Required
+
+| Component | Details |
+|---|---|
+| Microcontroller board | NXP LPC1768 development board |
+| LED | Any standard LED (on-board or external) |
+| Resistor | 220 Ω to 330 Ω in series with an external LED |
+| Power / programmer | USB or the board's programming interface |
+
+## Pin Connection
+
+| Signal | LPC1768 pin |
+|---|---|
+| LED | **P_._** *(fill in the port and pin used in the code)* |
+
+Connect the LED anode to the GPIO pin through the resistor, and the cathode to GND. If your board's LED is active-low, adjust the set and clear operations to match.
+
+## How It Works
+
+1. **Include the device header:** `LPC17xx.h` gives access to the peripheral registers.
+2. **Initialise the system:** `SystemInit()` sets up the clock.
+3. **Configure the pin as an output:** the direction register (`FIODIR`) is set for the LED pin.
+4. **Blink in an infinite loop:**
+   - Set the pin high (`FIOSET`) to turn the LED on.
+   - Wait using a software delay loop.
+   - Clear the pin (`FIOCLR`) to turn the LED off.
+   - Wait again.
+
+The blink speed depends on the delay loop count. A larger value gives a slower blink.
+
+## Getting Started
+
+1. Open your ARM toolchain or IDE (for example Keil uVision) and create a new project for the **LPC1768**.
+2. Add the CMSIS startup and system files for the device.
+3. Add `ledblink.c` to the project as the source file.
+4. Build the project and flash it to the board.
+5. The LED should start blinking.
+
+## Files
+
+| File | Description |
+|---|---|
+| `ledblink.c` | LED blink program |
+
+## Possible Improvements
+
+- Use a hardware timer instead of a software delay loop for accurate timing.
+- Add a switch input to start or stop the blinking.
+- Blink multiple LEDs in a pattern.
+
+## Author
+
+**Jawad Khan**
+B.Tech, Electronics and Communication Engineering, PES University
+[GitHub](https://github.com/JAWADKHAN146) | [LinkedIn](https://linkedin.com/in/jawad-khan-225a44355)
